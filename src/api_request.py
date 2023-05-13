@@ -180,11 +180,11 @@ class APIRequestBuilderFactory:
     @staticmethod
     def get_builder(builder):
         builders = {
-            "upload": UploadFileRequestBuilder,
-            "get_metadata": GetFileMetadataRequestBuilder,
-            "delete": DeleteFileRequestBuilder,
+            "Upload file": UploadFileRequestBuilder,
+            "Get file metadata": GetFileMetadataRequestBuilder,
+            "Delete file": DeleteFileRequestBuilder,
         }
-        if builder.lower() not in builders:
-            return False
+        if builder not in builders:
+            return None
         api_request = APIRequest()
-        return builders[builder.lower()](api_request)
+        return builders[builder](api_request)

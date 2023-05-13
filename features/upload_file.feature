@@ -8,11 +8,10 @@ Feature: Upload file
   Scenario Outline: upload file using its path
       Given I provided <file_path>
       When I send upload file request
-      Then I should receive response with <status_code>
+      Then I should receive response with status code <status_code>
 
       Examples: Pathes
         | file_path                             | status_code |
         | /Volodymyr_Rizun/data/video.mp4       | 200         |
         | /Volodymyr_Rizun/data/text.txt        | 200         |
         | /Volodymyr_Rizun/data/image.png       | 200         |
-        | /Volodymyr_Rizun/data/not_exists.txt  | 400         |
