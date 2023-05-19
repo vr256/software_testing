@@ -1,29 +1,30 @@
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-
-from pages.login_page import LoginPage
-
-import time
-
-# make browser factory
-
-BASE_URL = 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'
-LOGIN = 'Admin'
-PASSWORD = 'admin123'
+import os
+import subprocess
 
 
-def run():
-    driver = webdriver.Chrome()
-    driver.get(BASE_URL)
-    login_page = LoginPage(driver, timeout=5)
-    login_page.enter_username(LOGIN)
-    login_page.enter_password(PASSWORD)
-    dashboard_page = login_page.submit_authorization()
-    admin_page = dashboard_page.open_module('admin')
-    admin_page.view_job_titles()
-    time.sleep(5)
-    driver.close()
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+REPORTS_DIR = os.path.join(BASE_DIR, "reports")
+XML_DIR = os.path.join(REPORTS_DIR, "xml")
 
+reports = [
+    "TESTS-login.xml",
+]
 
-if __name__ == '__main__':
-    run()
+# specifying order of testing features
+# (files should be deleted after they are uploaded)
+feature_pathes = [
+    os.path.join(BASE_DIR, "features", "login.feature"),
+]
+
+for path in feature_pathes:
+    subprocess.run(["behave", path, "--junit",
+                   "--junit-directory=reports/xml"])
+
+for filename in [os.path.join(XML_DIR, report) for report in reports]:
+    subprocess.run(["junit2html",
+                    filename,
+                    os.path.join(
+                        REPORTS_DIR, filename.partition(
+                            "-")[2].partition(".xml")[0] + ".html"
+                    ),
+                    ])
