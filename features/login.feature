@@ -10,6 +10,6 @@ Feature: Login
 
       Examples: Pathes
         | username    | password | logged_in |
-        | Admin       | admin123 | True       |
-        | ADMIN       | 123456   | False       |
-        | admin       | password | False       |
+        | Admin       | admin123 | True      |
+        | ADMIN       | admin123 | False     |
+        | admin       | 123456   | False     |
