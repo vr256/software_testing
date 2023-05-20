@@ -2,10 +2,10 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
-from pages.bases import SideBar
+from pages.bases import SidebarPage
 
 
-class AdminPage(SideBar):
+class AdminPage(SidebarPage):
     def __init__(self, driver, timeout):
         super().__init__(driver, timeout)
         self._job_locator = "//li[@class='oxd-topbar-body-nav-tab --parent']"
@@ -38,17 +38,20 @@ class AdminPage(SideBar):
         enter_job_title = WebDriverWait(self._driver, self._timeout).until(
             EC.presence_of_element_located((By.XPATH, self._enter_job_title_locator)))
         enter_job_title.send_keys(title)
+
         enter_job_description = WebDriverWait(self._driver, self._timeout).until(
             EC.presence_of_element_located((By.XPATH, self._enter_job_description_locator)))
         enter_job_description.send_keys(description)
+
         enter_notes = WebDriverWait(self._driver, self._timeout).until(
             EC.presence_of_element_located((By.XPATH, self._enter_notes_locator)))
         enter_notes.send_keys(note)
+
         button_save = WebDriverWait(self._driver, self._timeout).until(
             EC.element_to_be_clickable((By.XPATH, self._button_save_locator)))
         button_save.click()
-        self.open_module('admin')
-        self.view_job_titles()
+
+        return self
 
     def check_for_job_title(self, title) -> bool:
         job_title_locator = f"//div[contains(text(), '{title}')]"
@@ -59,9 +62,6 @@ class AdminPage(SideBar):
             return False
         else:
             return True
-        finally:
-            self.open_module('admin')
-            self.view_job_titles()
 
     def delete_job_title(self, title):
         button_delete_job_title_locator = f"""//div[contains(text(), '{title}')]/parent::div/following-sibling::\

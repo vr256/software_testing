@@ -8,12 +8,16 @@ XML_DIR = os.path.join(REPORTS_DIR, "xml")
 
 reports = [
     "TESTS-login.xml",
+    "TESTS-add_job_title.xml",
+    "TESTS-delete_job_title.xml",
 ]
 
 # specifying order of testing features
 # (files should be deleted after they are uploaded)
 feature_pathes = [
     os.path.join(BASE_DIR, "features", "login.feature"),
+    os.path.join(BASE_DIR, "features", "add_job_title.feature"),
+    os.path.join(BASE_DIR, "features", "delete_job_title.feature"),
 ]
 
 for path in feature_pathes:

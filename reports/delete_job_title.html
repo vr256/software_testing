@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>TESTS-login.xml</title>
+    <title>TESTS-delete_job_title.xml</title>
     <style type="text/css">
         body {
     background-color: white;
@@ -201,7 +201,7 @@ h1 {
 <body>
     
 <h1>
-    Test Report : TESTS-login.xml
+    Test Report : TESTS-delete_job_title.xml
 </h1>
 <a id="toc"></a>
 <table class="index-table">
@@ -210,14 +210,12 @@ h1 {
             <ul class="toc">
             
                 
-                <li>login.Login
+                <li>delete_job_title.Delete job title
                 <ul>
                     
-                    <li><a href="#749f72cd-bf6b-4ec4-b02c-2ed2c9978831">log in using username and password -- @1.1 Logins</a></li>
+                    <li><a href="#9c51478b-20dd-4278-8758-ebc8e547567d">delete job with given title -- @1.1 Job titles</a></li>
                     
-                    <li><a href="#b291367e-76cd-4ef5-8166-8fb0ef0756ea">log in using username and password -- @1.2 Logins</a></li>
-                    
-                    <li><a href="#b3068038-3249-470c-9384-d1182f60a40b">log in using username and password -- @1.3 Logins</a></li>
+                    <li><a href="#2a97e7c0-c7f2-4f8c-baad-4bb72c16a811">delete job with given title -- @1.2 Job titles</a></li>
                     
                 </ul>
                 </li>
@@ -234,8 +232,6 @@ h1 {
                     
                     
                     
-                    
-                    
                 
             
             </ul>
@@ -245,17 +241,17 @@ h1 {
 
 
     <div class="testsuite">
-        <h2>Test Suite: login.Login</h2>
-        <a id="921a8b72-74d0-4522-b21b-8a7295bf2a59"></a>
+        <h2>Test Suite: delete_job_title.Delete job title</h2>
+        <a id="5fc2f303-65e3-4661-83a1-06fefcc10167"></a>
         
         
         <h3>Results</h3>
         <table class="proplist">
             <tr>
-                <th>Duration</th><td>16.388 sec</td>
+                <th>Duration</th><td>30.429 sec</td>
             </tr>
             <tr>
-                <th>Tests</th><td>3</td>
+                <th>Tests</th><td>2</td>
             </tr>
             <tr>
                 <th>Failures</th><td>0</td>
@@ -266,15 +262,15 @@ h1 {
             <h3>Tests</h3>
             
             <div class="testclass">
-                <h4>login.Login</h4>
+                <h4>delete_job_title.Delete job title</h4>
                 <div class="testcases">
                 
                     <div class="test outcome outcome-passed">
-                        <a id="749f72cd-bf6b-4ec4-b02c-2ed2c9978831"></a>
+                        <a id="9c51478b-20dd-4278-8758-ebc8e547567d"></a>
                         <table class="proplist">
-                            <tr><th>Test case:</th><td><b>log in using username and password -- @1.1 Logins</b></td></tr>
+                            <tr><th>Test case:</th><td><b>delete job with given title -- @1.1 Job titles</b></td></tr>
                             <tr><th>Outcome:</th><td>Passed</td></tr>
-                            <tr><th>Duration:</th><td>5.772 sec</td></tr>
+                            <tr><th>Duration:</th><td>15.386 sec</td></tr>
                         
                             <tr><th>Failed</th><td>None</td></tr>
                         
@@ -292,11 +288,11 @@ h1 {
                             <pre>
 
 @scenario.begin
-  Scenario Outline: log in using username and password -- @1.1 Logins
-    Given I am on the login page ... passed in 3.868s
-    When I enter Admin and admin123 ... passed in 0.738s
-    And press to login ... passed in 1.160s
-    Then I should be True ... passed in 0.007s
+  Scenario Outline: delete job with given title -- @1.1 Job titles
+    Given I am logged in ... passed in 7.241s
+    And I am on the &#39;Job titles&#39; page ... passed in 1.689s
+    When I delete job with Student ... passed in 1.313s
+    Then I should see it False ... passed in 5.143s
 
 @scenario.end
 --------------------------------------------------------------------------------
@@ -308,11 +304,11 @@ h1 {
                     </div>
                 
                     <div class="test outcome outcome-passed">
-                        <a id="b291367e-76cd-4ef5-8166-8fb0ef0756ea"></a>
+                        <a id="2a97e7c0-c7f2-4f8c-baad-4bb72c16a811"></a>
                         <table class="proplist">
-                            <tr><th>Test case:</th><td><b>log in using username and password -- @1.2 Logins</b></td></tr>
+                            <tr><th>Test case:</th><td><b>delete job with given title -- @1.2 Job titles</b></td></tr>
                             <tr><th>Outcome:</th><td>Passed</td></tr>
-                            <tr><th>Duration:</th><td>5.106 sec</td></tr>
+                            <tr><th>Duration:</th><td>15.043 sec</td></tr>
                         
                             <tr><th>Failed</th><td>None</td></tr>
                         
@@ -330,49 +326,11 @@ h1 {
                             <pre>
 
 @scenario.begin
-  Scenario Outline: log in using username and password -- @1.2 Logins
-    Given I am on the login page ... passed in 4.209s
-    When I enter user and admin123 ... passed in 0.239s
-    And press to login ... passed in 0.648s
-    Then I should be False ... passed in 0.010s
-
-@scenario.end
---------------------------------------------------------------------------------
-
-</pre>
-                        </div>
-                        
-                        
-                    </div>
-                
-                    <div class="test outcome outcome-passed">
-                        <a id="b3068038-3249-470c-9384-d1182f60a40b"></a>
-                        <table class="proplist">
-                            <tr><th>Test case:</th><td><b>log in using username and password -- @1.3 Logins</b></td></tr>
-                            <tr><th>Outcome:</th><td>Passed</td></tr>
-                            <tr><th>Duration:</th><td>5.51 sec</td></tr>
-                        
-                            <tr><th>Failed</th><td>None</td></tr>
-                        
-                        
-                        </table>
-
-                        
-                        <pre>None</pre>
-                        
-                        
-
-                        
-                        
-                        <div class="stdout"><i>Stdout</i><br>
-                            <pre>
-
-@scenario.begin
-  Scenario Outline: log in using username and password -- @1.3 Logins
-    Given I am on the login page ... passed in 3.813s
-    When I enter admin and 123456 ... passed in 0.755s
-    And press to login ... passed in 0.933s
-    Then I should be False ... passed in 0.009s
+  Scenario Outline: delete job with given title -- @1.2 Job titles
+    Given I am logged in ... passed in 7.447s
+    And I am on the &#39;Job titles&#39; page ... passed in 1.666s
+    When I delete job with Intern ... passed in 0.782s
+    Then I should see it False ... passed in 5.148s
 
 @scenario.end
 --------------------------------------------------------------------------------

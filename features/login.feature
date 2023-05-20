@@ -8,8 +8,8 @@ Feature: Login
       And press to login
       Then I should be <logged_in>
 
-      Examples: Pathes
+      Examples: Logins
         | username    | password | logged_in |
         | Admin       | admin123 | True      |
-        | ADMIN       | admin123 | False     |
+        | user        | admin123 | False     |
         | admin       | 123456   | False     |

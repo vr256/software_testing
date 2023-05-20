@@ -3,14 +3,11 @@ from selenium import webdriver
 from pages.login_page import LoginPage
 
 
-BASE_URL = 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'
-EXPECTED_URL = 'https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index'
-
-
 @given("I am on the login page")
 def step_impl(context):
     context.driver = webdriver.Chrome()
-    context.driver.get(BASE_URL)
+    context.driver.get(context.base_url)
+    context.driver.maximize_window()
     context.login_page = LoginPage(context.driver, timeout=5)
 
 
@@ -28,4 +25,4 @@ def step_impl(context):
 @then("I should be {logged_in}")
 def step_impl(context, logged_in):
     actual_url = context.driver.current_url
-    assert str(actual_url == EXPECTED_URL) == logged_in
+    assert str(actual_url == context.expected_url) == logged_in
