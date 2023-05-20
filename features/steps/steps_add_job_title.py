@@ -1,11 +1,9 @@
 from behave import given, when, then
-from selenium import webdriver
 from pages.login_page import LoginPage
 
 
 @given("I am logged in")
 def step_impl(context):
-    context.driver = webdriver.Chrome()
     context.driver.get(context.base_url)
     context.driver.maximize_window()
     context.login_page = LoginPage(context.driver, timeout=5)
