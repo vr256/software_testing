@@ -1,9 +1,11 @@
 from behave import given, when, then
 from pages.login_page import LoginPage
+from test import DriverFactory
 
 
 @given("I am logged in")
 def step_impl(context):
+    context.driver = DriverFactory.get_driver(context.browser)
     context.driver.get(context.base_url)
     context.driver.maximize_window()
     context.login_page = LoginPage(context.driver, timeout=5)

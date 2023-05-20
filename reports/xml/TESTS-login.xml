@@ -1,167 +1,35 @@
-<testsuite name="login.Login" tests="3" errors="3" failures="0" skipped="0" time="2.00897" timestamp="2023-05-20T14:02:00.816746" hostname="LAPTOP-OMEN"><testcase classname="login.Login" name="log in using username and password -- @1.1 Logins" status="failed" time="1.996968"><error type="NoSuchWindowException" message="Message: no such window: target window already closed&#10;from unknown error: web view not found&#10;  (Session info: chrome=113.0.5672.127)&#10;Stacktrace:&#10;Backtrace:&#10;&#09;GetHandleVerifier [0x00D88893+48451]&#10;&#09;(No symbol) [0x00D1B8A1]&#10;&#09;(No symbol) [0x00C25058]&#10;&#09;(No symbol) [0x00C0D073]&#10;&#09;(No symbol) [0x00C6DEBB]&#10;&#09;(No symbol) [0x00C7BFD3]&#10;&#09;(No symbol) [0x00C6A0B6]&#10;&#09;(No symbol) [0x00C47E08]&#10;&#09;(No symbol) [0x00C48F2D]&#10;&#09;GetHandleVerifier [0x00FE8E3A+2540266]&#10;&#09;GetHandleVerifier [0x01028959+2801161]&#10;&#09;GetHandleVerifier [0x0102295C+2776588]&#10;&#09;GetHandleVerifier [0x00E12280+612144]&#10;&#09;(No symbol) [0x00D24F6C]&#10;&#09;(No symbol) [0x00D211D8]&#10;&#09;(No symbol) [0x00D212BB]&#10;&#09;(No symbol) [0x00D14857]&#10;&#09;BaseThreadInitThunk [0x770C7D59+25]&#10;&#09;RtlInitializeExceptionChain [0x779AB74B+107]&#10;&#09;RtlClearBits [0x779AB6CF+191]&#10;">
-<![CDATA[
-Failing step: Given I am on the login page ... failed in 1.997s
-Location: features/login.feature:6
-Traceback (most recent call last):
-  File "C:\Users\1\Desktop\university\3\testing\Volodymyr_Rizun\venv\Lib\site-packages\behave\model.py", line 1329, in run
-    match.run(runner.context)
-  File "C:\Users\1\Desktop\university\3\testing\Volodymyr_Rizun\venv\Lib\site-packages\behave\matchers.py", line 98, in run
-    self.func(context, *args, **kwargs)
-  File "features\steps\steps_login.py", line 8, in step_impl
-    context.driver.maximize_window()
-  File "C:\Users\1\Desktop\university\3\testing\Volodymyr_Rizun\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 592, in maximize_window
-    self.execute(command, None)
-  File "C:\Users\1\Desktop\university\3\testing\Volodymyr_Rizun\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 440, in execute
-    self.error_handler.check_response(response)
-  File "C:\Users\1\Desktop\university\3\testing\Volodymyr_Rizun\venv\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 245, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=113.0.5672.127)
-Stacktrace:
-Backtrace:
-	GetHandleVerifier [0x00D88893+48451]
-	(No symbol) [0x00D1B8A1]
-	(No symbol) [0x00C25058]
-	(No symbol) [0x00C0D073]
-	(No symbol) [0x00C6DEBB]
-	(No symbol) [0x00C7BFD3]
-	(No symbol) [0x00C6A0B6]
-	(No symbol) [0x00C47E08]
-	(No symbol) [0x00C48F2D]
-	GetHandleVerifier [0x00FE8E3A+2540266]
-	GetHandleVerifier [0x01028959+2801161]
-	GetHandleVerifier [0x0102295C+2776588]
-	GetHandleVerifier [0x00E12280+612144]
-	(No symbol) [0x00D24F6C]
-	(No symbol) [0x00D211D8]
-	(No symbol) [0x00D212BB]
-	(No symbol) [0x00D14857]
-	BaseThreadInitThunk [0x770C7D59+25]
-	RtlInitializeExceptionChain [0x779AB74B+107]
-	RtlClearBits [0x779AB6CF+191]
-
-]]>
-</error><system-out>
+<testsuite name="login.Login" tests="3" errors="0" failures="0" skipped="0" time="18.056379" timestamp="2023-05-20T14:12:04.448474" hostname="LAPTOP-OMEN"><testcase classname="login.Login" name="log in using username and password -- @1.1 Logins" status="passed" time="6.782202"><system-out>
 <![CDATA[
 @scenario.begin
   Scenario Outline: log in using username and password -- @1.1 Logins
-    Given I am on the login page ... failed in 1.997s
-    When I enter Admin and admin123 ... skipped in 0.000s
-    And press to login ... skipped in 0.000s
-    Then I should be True ... skipped in 0.000s
+    Given I am on the login page ... passed in 4.940s
+    When I enter Admin and admin123 ... passed in 0.741s
+    And press to login ... passed in 1.090s
+    Then I should be True ... passed in 0.011s
 
 @scenario.end
 --------------------------------------------------------------------------------
 ]]>
-</system-out></testcase><testcase classname="login.Login" name="log in using username and password -- @1.2 Logins" status="failed" time="0.007001"><error type="NoSuchWindowException" message="Message: no such window: target window already closed&#10;from unknown error: web view not found&#10;  (Session info: chrome=113.0.5672.127)&#10;Stacktrace:&#10;Backtrace:&#10;&#09;GetHandleVerifier [0x00D88893+48451]&#10;&#09;(No symbol) [0x00D1B8A1]&#10;&#09;(No symbol) [0x00C25058]&#10;&#09;(No symbol) [0x00C0D073]&#10;&#09;(No symbol) [0x00C6DEBB]&#10;&#09;(No symbol) [0x00C7BFD3]&#10;&#09;(No symbol) [0x00C6A0B6]&#10;&#09;(No symbol) [0x00C47E08]&#10;&#09;(No symbol) [0x00C48F2D]&#10;&#09;GetHandleVerifier [0x00FE8E3A+2540266]&#10;&#09;GetHandleVerifier [0x01028959+2801161]&#10;&#09;GetHandleVerifier [0x0102295C+2776588]&#10;&#09;GetHandleVerifier [0x00E12280+612144]&#10;&#09;(No symbol) [0x00D24F6C]&#10;&#09;(No symbol) [0x00D211D8]&#10;&#09;(No symbol) [0x00D212BB]&#10;&#09;(No symbol) [0x00D14857]&#10;&#09;BaseThreadInitThunk [0x770C7D59+25]&#10;&#09;RtlInitializeExceptionChain [0x779AB74B+107]&#10;&#09;RtlClearBits [0x779AB6CF+191]&#10;">
-<![CDATA[
-Failing step: Given I am on the login page ... failed in 0.007s
-Location: features/login.feature:6
-Traceback (most recent call last):
-  File "C:\Users\1\Desktop\university\3\testing\Volodymyr_Rizun\venv\Lib\site-packages\behave\model.py", line 1329, in run
-    match.run(runner.context)
-  File "C:\Users\1\Desktop\university\3\testing\Volodymyr_Rizun\venv\Lib\site-packages\behave\matchers.py", line 98, in run
-    self.func(context, *args, **kwargs)
-  File "features\steps\steps_login.py", line 7, in step_impl
-    context.driver.get(context.base_url)
-  File "C:\Users\1\Desktop\university\3\testing\Volodymyr_Rizun\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 449, in get
-    self.execute(Command.GET, {"url": url})
-  File "C:\Users\1\Desktop\university\3\testing\Volodymyr_Rizun\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 440, in execute
-    self.error_handler.check_response(response)
-  File "C:\Users\1\Desktop\university\3\testing\Volodymyr_Rizun\venv\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 245, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=113.0.5672.127)
-Stacktrace:
-Backtrace:
-	GetHandleVerifier [0x00D88893+48451]
-	(No symbol) [0x00D1B8A1]
-	(No symbol) [0x00C25058]
-	(No symbol) [0x00C0D073]
-	(No symbol) [0x00C6DEBB]
-	(No symbol) [0x00C7BFD3]
-	(No symbol) [0x00C6A0B6]
-	(No symbol) [0x00C47E08]
-	(No symbol) [0x00C48F2D]
-	GetHandleVerifier [0x00FE8E3A+2540266]
-	GetHandleVerifier [0x01028959+2801161]
-	GetHandleVerifier [0x0102295C+2776588]
-	GetHandleVerifier [0x00E12280+612144]
-	(No symbol) [0x00D24F6C]
-	(No symbol) [0x00D211D8]
-	(No symbol) [0x00D212BB]
-	(No symbol) [0x00D14857]
-	BaseThreadInitThunk [0x770C7D59+25]
-	RtlInitializeExceptionChain [0x779AB74B+107]
-	RtlClearBits [0x779AB6CF+191]
-
-]]>
-</error><system-out>
+</system-out></testcase><testcase classname="login.Login" name="log in using username and password -- @1.2 Logins" status="passed" time="5.433007"><system-out>
 <![CDATA[
 @scenario.begin
   Scenario Outline: log in using username and password -- @1.2 Logins
-    Given I am on the login page ... failed in 0.007s
-    When I enter user and admin123 ... skipped in 0.000s
-    And press to login ... skipped in 0.000s
-    Then I should be False ... skipped in 0.000s
+    Given I am on the login page ... passed in 4.028s
+    When I enter user and admin123 ... passed in 0.742s
+    And press to login ... passed in 0.653s
+    Then I should be False ... passed in 0.010s
 
 @scenario.end
 --------------------------------------------------------------------------------
 ]]>
-</system-out></testcase><testcase classname="login.Login" name="log in using username and password -- @1.3 Logins" status="failed" time="0.005001"><error type="NoSuchWindowException" message="Message: no such window: target window already closed&#10;from unknown error: web view not found&#10;  (Session info: chrome=113.0.5672.127)&#10;Stacktrace:&#10;Backtrace:&#10;&#09;GetHandleVerifier [0x00D88893+48451]&#10;&#09;(No symbol) [0x00D1B8A1]&#10;&#09;(No symbol) [0x00C25058]&#10;&#09;(No symbol) [0x00C0D073]&#10;&#09;(No symbol) [0x00C6DEBB]&#10;&#09;(No symbol) [0x00C7BFD3]&#10;&#09;(No symbol) [0x00C6A0B6]&#10;&#09;(No symbol) [0x00C47E08]&#10;&#09;(No symbol) [0x00C48F2D]&#10;&#09;GetHandleVerifier [0x00FE8E3A+2540266]&#10;&#09;GetHandleVerifier [0x01028959+2801161]&#10;&#09;GetHandleVerifier [0x0102295C+2776588]&#10;&#09;GetHandleVerifier [0x00E12280+612144]&#10;&#09;(No symbol) [0x00D24F6C]&#10;&#09;(No symbol) [0x00D211D8]&#10;&#09;(No symbol) [0x00D212BB]&#10;&#09;(No symbol) [0x00D14857]&#10;&#09;BaseThreadInitThunk [0x770C7D59+25]&#10;&#09;RtlInitializeExceptionChain [0x779AB74B+107]&#10;&#09;RtlClearBits [0x779AB6CF+191]&#10;">
-<![CDATA[
-Failing step: Given I am on the login page ... failed in 0.005s
-Location: features/login.feature:6
-Traceback (most recent call last):
-  File "C:\Users\1\Desktop\university\3\testing\Volodymyr_Rizun\venv\Lib\site-packages\behave\model.py", line 1329, in run
-    match.run(runner.context)
-  File "C:\Users\1\Desktop\university\3\testing\Volodymyr_Rizun\venv\Lib\site-packages\behave\matchers.py", line 98, in run
-    self.func(context, *args, **kwargs)
-  File "features\steps\steps_login.py", line 7, in step_impl
-    context.driver.get(context.base_url)
-  File "C:\Users\1\Desktop\university\3\testing\Volodymyr_Rizun\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 449, in get
-    self.execute(Command.GET, {"url": url})
-  File "C:\Users\1\Desktop\university\3\testing\Volodymyr_Rizun\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 440, in execute
-    self.error_handler.check_response(response)
-  File "C:\Users\1\Desktop\university\3\testing\Volodymyr_Rizun\venv\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 245, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=113.0.5672.127)
-Stacktrace:
-Backtrace:
-	GetHandleVerifier [0x00D88893+48451]
-	(No symbol) [0x00D1B8A1]
-	(No symbol) [0x00C25058]
-	(No symbol) [0x00C0D073]
-	(No symbol) [0x00C6DEBB]
-	(No symbol) [0x00C7BFD3]
-	(No symbol) [0x00C6A0B6]
-	(No symbol) [0x00C47E08]
-	(No symbol) [0x00C48F2D]
-	GetHandleVerifier [0x00FE8E3A+2540266]
-	GetHandleVerifier [0x01028959+2801161]
-	GetHandleVerifier [0x0102295C+2776588]
-	GetHandleVerifier [0x00E12280+612144]
-	(No symbol) [0x00D24F6C]
-	(No symbol) [0x00D211D8]
-	(No symbol) [0x00D212BB]
-	(No symbol) [0x00D14857]
-	BaseThreadInitThunk [0x770C7D59+25]
-	RtlInitializeExceptionChain [0x779AB74B+107]
-	RtlClearBits [0x779AB6CF+191]
-
-]]>
-</error><system-out>
+</system-out></testcase><testcase classname="login.Login" name="log in using username and password -- @1.3 Logins" status="passed" time="5.841169"><system-out>
 <![CDATA[
 @scenario.begin
   Scenario Outline: log in using username and password -- @1.3 Logins
-    Given I am on the login page ... failed in 0.005s
-    When I enter admin and 123456 ... skipped in 0.000s
-    And press to login ... skipped in 0.000s
-    Then I should be False ... skipped in 0.000s
+    Given I am on the login page ... passed in 4.065s
+    When I enter admin and 123456 ... passed in 0.755s
+    And press to login ... passed in 1.011s
+    Then I should be False ... passed in 0.010s
 
 @scenario.end
 --------------------------------------------------------------------------------
