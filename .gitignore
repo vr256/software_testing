@@ -6,8 +6,12 @@ __pycache__/
 # C extensions
 *.so
 
-# custom
+# VSCode #
+**/.vscode/
+
+# Custom
 to_do.txt
+dummy.py
 
 # Distribution / packaging
 .Python

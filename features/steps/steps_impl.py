@@ -22,7 +22,7 @@ def step_impl(context, username, password):
 
 @when("press to login")
 def step_impl(context):
-    context.login_page.submit_authorization()
+    context.dashboard_page = context.login_page.submit_authorization()
 
 
 @then("I should be {logged_in}")

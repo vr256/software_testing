@@ -27,4 +27,4 @@ class LoginPage(BasePage):
         login_button_element = WebDriverWait(self._driver, self._timeout).until(
             EC.element_to_be_clickable((By.XPATH, self._login_button_locator)))
         login_button_element.click()
-        return SideBar(self._driver, self._timeout).get_module('dashboard')
+        return SideBar(self._driver, self._timeout).get_module("dashboard")
