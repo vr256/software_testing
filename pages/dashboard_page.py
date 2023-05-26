@@ -1,6 +1,7 @@
-from pages.bases import SidebarPage
+from pages.bases import BasePage, SidebarMixin
 
 
-class DashboardPage(SidebarPage):
+class DashboardPage(BasePage, SidebarMixin):
     def __init__(self, driver, timeout):
-        super().__init__(driver, timeout)
+        BasePage.__init__(self, driver, timeout)
+        SidebarMixin.__init__(self)

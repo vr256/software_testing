@@ -1,7 +1,8 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from pages.bases import BasePage, SidebarPage
+from pages.bases import BasePage
+from pages.dashboard_page import DashboardPage
 
 
 class LoginPage(BasePage):
@@ -27,4 +28,4 @@ class LoginPage(BasePage):
         login_button_element = WebDriverWait(self._driver, self._timeout).until(
             EC.element_to_be_clickable((By.XPATH, self._login_button_locator)))
         login_button_element.click()
-        return SidebarPage(self._driver, self._timeout).get_page("dashboard")
+        return DashboardPage(self._driver, self._timeout)
