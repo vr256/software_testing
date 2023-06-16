@@ -2,6 +2,9 @@ import os
 import subprocess
 import sys
 
+
+from typing import Any
+
 from selenium import webdriver
 
 
@@ -26,7 +29,7 @@ feature_pathes = [
 
 class DriverFactory:
     @staticmethod
-    def get_driver(browser):
+    def get_driver(browser: str) -> Any:
         browser = browser.lower()
         browsers = {
             "chrome": webdriver.Chrome,
@@ -39,7 +42,7 @@ class DriverFactory:
         return browsers[browser]()
 
 
-def run_tests():
+def run_tests() -> None:
     if len(sys.argv) > 1:
         browser = sys.argv[1]
     else:

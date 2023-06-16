@@ -1,23 +1,23 @@
-<testsuite name="delete_job_title.Delete job title" tests="2" errors="0" failures="0" skipped="0" time="30.741305" timestamp="2023-05-26T12:46:29.051747" hostname="LAPTOP-OMEN"><testcase classname="delete_job_title.Delete job title" name="delete job with given title -- @1.1 Job titles" status="passed" time="15.653937"><system-out>
+<testsuite name="delete_job_title.Delete job title" tests="2" errors="0" failures="0" skipped="0" time="29.979002" timestamp="2023-06-09T01:20:30.650898" hostname="LAPTOP-OMEN"><testcase classname="delete_job_title.Delete job title" name="delete job with given title -- @1.1 Job titles" status="passed" time="15.423048"><system-out>
 <![CDATA[
 @scenario.begin
   Scenario Outline: delete job with given title -- @1.1 Job titles
-    Given I am logged in ... passed in 6.911s
-    And I am on the 'Job titles' page ... passed in 1.838s
-    When I delete job with Student ... passed in 1.764s
-    Then I should see it False ... passed in 5.141s
+    Given I am logged in ... passed in 7.783s
+    And I am on the 'Job titles' page ... passed in 1.718s
+    When I delete job with Student ... passed in 0.778s
+    Then I should see it False ... passed in 5.144s
 
 @scenario.end
 --------------------------------------------------------------------------------
 ]]>
-</system-out></testcase><testcase classname="delete_job_title.Delete job title" name="delete job with given title -- @1.2 Job titles" status="passed" time="15.087368"><system-out>
+</system-out></testcase><testcase classname="delete_job_title.Delete job title" name="delete job with given title -- @1.2 Job titles" status="passed" time="14.555954"><system-out>
 <![CDATA[
 @scenario.begin
   Scenario Outline: delete job with given title -- @1.2 Job titles
-    Given I am logged in ... passed in 6.970s
-    And I am on the 'Job titles' page ... passed in 1.730s
-    When I delete job with Intern ... passed in 1.238s
-    Then I should see it False ... passed in 5.149s
+    Given I am logged in ... passed in 6.981s
+    And I am on the 'Job titles' page ... passed in 1.659s
+    When I delete job with Intern ... passed in 0.777s
+    Then I should see it False ... passed in 5.138s
 
 @scenario.end
 --------------------------------------------------------------------------------

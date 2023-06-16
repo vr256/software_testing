@@ -1,12 +1,15 @@
+from typing import Any, Self
+
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
+
 from pages.bases import BasePage, SidebarMixin
 
 
 class AdminPage(BasePage, SidebarMixin):
-    def __init__(self, driver, timeout):
+    def __init__(self, driver: Any, timeout: float | int = 1.5) -> None:
         BasePage.__init__(self, driver, timeout)
         SidebarMixin.__init__(self)
         # Job drowdown menu
@@ -21,7 +24,7 @@ class AdminPage(BasePage, SidebarMixin):
         self._enter_notes_locator = "//textarea[@placeholder='Add note']"
         self._button_save_locator = "//button[contains(@class,'oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space')]"
 
-    def view_job_titles(self):
+    def view_job_titles(self) -> Self:
         # Click on "Job" dropdown menu first
         job_menu = WebDriverWait(self._driver, self._timeout).until(
             EC.element_to_be_clickable((By.XPATH, self._job_locator)))
@@ -32,13 +35,13 @@ class AdminPage(BasePage, SidebarMixin):
         jot_titles_option.click()
         return self
 
-    def press_add_job_title(self):
+    def press_add_job_title(self) -> Self:
         add_job_title_button = WebDriverWait(self._driver, self._timeout).until(
             EC.element_to_be_clickable((By.XPATH, self._button_add_job_title_locator)))
         add_job_title_button.click()
         return self
 
-    def add_job_title(self, title, description, note):
+    def add_job_title(self, title: str, description: str, note: str) -> Self:
         # Enter title
         enter_job_title = WebDriverWait(self._driver, self._timeout).until(
             EC.presence_of_element_located((By.XPATH, self._enter_job_title_locator)))
@@ -57,7 +60,7 @@ class AdminPage(BasePage, SidebarMixin):
         button_save.click()
         return self
 
-    def check_for_job_title(self, title) -> bool:
+    def check_for_job_title(self, title: str) -> bool:
         job_title_locator = f"//div[contains(text(), '{title}')]"
         try:
             WebDriverWait(self._driver, self._timeout).until(
@@ -67,7 +70,7 @@ class AdminPage(BasePage, SidebarMixin):
         else:
             return True
 
-    def delete_job_title(self, title):
+    def delete_job_title(self, title: str) -> Self:
         # Find job with given title
         button_delete_job_title_locator = f"""//div[contains(text(), '{title}')]/parent::div/following-sibling::\
             div//button[@class='oxd-icon-button oxd-table-cell-action-space' and .//i[@class='oxd-icon bi-trash']]"""

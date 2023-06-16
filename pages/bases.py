@@ -1,11 +1,13 @@
 from abc import ABCMeta
+from typing import Any, Optional, Protocol
+
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 
 
 class BasePage:
-    def __init__(self, driver, timeout):
+    def __init__(self, driver: Any, timeout: float | int = 1.5) -> None:
         self._driver = driver
         self._timeout = timeout
 
@@ -13,7 +15,7 @@ class BasePage:
 class SidebarMixin(metaclass=ABCMeta):
     """Mixin class for sidebar options and page navigation"""
 
-    def __init__(self):
+    def __init__(self) -> None:
         # to avoid circular imports
         from pages.dashboard_page import DashboardPage
         from pages.admin_page import AdminPage
@@ -27,12 +29,15 @@ class SidebarMixin(metaclass=ABCMeta):
             "admin": "//a[@href='/web/index.php/admin/viewAdminModule']",
         }
 
-    def get_page(self, option):
+    def get_page(self, option: str) -> Optional[BasePage]:
         """Return page object of given sidebar option"""
+
         if option in self._options:
             return self._options[option](self._driver, self._timeout)
+        else:
+            return None
 
-    def open_page(self, option):
+    def open_page(self, option: str) -> Optional[BasePage]:
         """Return page object of given sidebar option and open corresponding web page"""
 
         if option in self._options_locators:
@@ -40,3 +45,5 @@ class SidebarMixin(metaclass=ABCMeta):
                 EC.element_to_be_clickable((By.XPATH, self._options_locators[option])))
             option_element.click()
             return self.get_page(option)
+        else:
+            return None
