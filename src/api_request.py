@@ -1,21 +1,10 @@
 import json
-import requests
 import os
-
 from abc import ABCMeta, abstractmethod
+
+import requests
+
 from . import ACCESS_TOKEN, ROOT
-
-
-__all__ = [
-    "APIRequestBuilderFactory",
-    "APIRequestDirector",
-    "DeleteFileRequestBuilder",
-    "GetFileMetadataRequestBuilder",
-    "UploadFileRequestBuilder",
-    "APIRequestBuilder",
-    "APIRequest",
-    "EmptyRequest",
-]
 
 
 class EmptyRequest(Exception):
@@ -88,7 +77,7 @@ class UploadFileRequestBuilder(APIRequestBuilder):
                     "autorename": True,
                     "mute": False,
                     "strict_conflict": False,
-                }
+                },
             ),
         }
 
@@ -126,9 +115,9 @@ class GetFileMetadataRequestBuilder(APIRequestBuilder):
         }
         body = json.dumps({"path": path})
         response = requests.post(url=url, headers=headers, data=body)
-        id = response.json()["id"]
+        file_id = response.json()["id"]
         # using id to make get_file_metadata API call
-        self.api_request.body = json.dumps({"file": id})
+        self.api_request.body = json.dumps({"file": file_id})
 
     def get_request(self):
         return self.api_request

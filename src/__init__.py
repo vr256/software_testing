@@ -1,7 +1,7 @@
 import base64
-import requests
 import os
 
+import requests
 
 APP_KEY = "r0vgi9wz99ikbjk"
 APP_SECRET = "fn5634v8muig30k"
