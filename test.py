@@ -1,12 +1,9 @@
 import os
 import subprocess
 import sys
-
-
 from typing import Any
 
 from selenium import webdriver
-
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 REPORTS_DIR = os.path.join(BASE_DIR, "reports")
@@ -49,19 +46,29 @@ def run_tests() -> None:
         browser = "chrome"
 
     for path in feature_pathes:
-        subprocess.run(["behave", path, "--junit",
-                        "--junit-directory=reports/xml",
-                        "-D", f"browser={browser}"])
+        subprocess.run(
+            [
+                "behave",
+                path,
+                "--junit",
+                "--junit-directory=reports/xml",
+                "-D",
+                f"browser={browser}",
+            ]
+        )
 
     for filename in [os.path.join(XML_DIR, report) for report in reports]:
-        subprocess.run(["junit2html",
-                        filename,
-                        os.path.join(
-                            REPORTS_DIR, filename.partition(
-                                "-")[2].partition(".xml")[0] + ".html"
-                        ),
-                        ])
+        subprocess.run(
+            [
+                "junit2html",
+                filename,
+                os.path.join(
+                    REPORTS_DIR,
+                    filename.partition("-")[2].partition(".xml")[0] + ".html",
+                ),
+            ]
+        )
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     run_tests()
