@@ -1,0 +1,3 @@
+from typing import Any
+
+def before_feature(context: Any, feature: Any) -> Any: ...

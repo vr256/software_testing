@@ -1,7 +1,8 @@
-# Volodymyr_Rizun
-A repo for Software Development Technologies course
+# Testing
+A repo for Software Testing course
 
 # WebAPI
+The goal is to test Dropbox API using BDD approach in Python (behave).
 
 ## Project Structure
 - **src** - contains factory and builders to make DropboxAPI requests. It also contains APIRequest class for encapsulating requests logic and APIRequestDirector class for defining a standard way to call methods of builder to receive a proper request.
