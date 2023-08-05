@@ -1,7 +1,8 @@
-# Volodymyr_Rizun
-A repo for Software Development Technologies course
+# Testing
+A repo for Software Testing course
 
 # WebUI
+The goal is to test UI on https://opensource-demo.orangehrmlive.com/web/index.php using Python Selenium client and BDD approach via behave.
 
 ## Project Structure
 - **pages** - contains pages implementing Page Object Model. BasePage and SidebarPage provides general functionality and are inherited by other page classes. 
@@ -11,8 +12,8 @@ A repo for Software Development Technologies course
 
 ## How to Run
 It is recommended to set up your virtual environment using **venv** module first, and then follow these steps:
-1. git clone https://github.com/VolodymyrRizun/Volodymyr_Rizun.git
-2. cd Volodymyr_Rizun
+1. git clone https://github.com/vr256/testing.git
+2. cd testing
 3. git checkout remotes/origin/WebUI
 4. Install the required dependencies with   
    `pip install -r requirements.txt`
