@@ -12,8 +12,8 @@ The goal is to test Dropbox API using BDD approach in Python (behave).
 
 ## How to Run
 It is recommended to set up your virtual environment using **venv** module first, and then follow these steps:
-1. git clone https://github.com/VolodymyrRizun/Volodymyr_Rizun.git
-2. cd Volodymyr_Rizun
+1. git clone https://github.com/vr256/testing.git
+2. cd testing
 3. git checkout remotes/origin/WebAPI
 4. Install the required dependencies with   
    `pip install -r requirements.txt`
