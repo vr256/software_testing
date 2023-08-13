@@ -1,5 +1,5 @@
 # Testing
-A repo for Software Testing course
+A repo containing BDD tests for Dropbox API (on branch WebAPI), and UI tests using Selenium (on branch WebUI)  
 
 # WebAPI
 The goal is to test Dropbox API using BDD approach in Python (behave).
