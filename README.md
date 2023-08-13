@@ -1,5 +1,5 @@
 # Testing
-A repo for Software Testing course
+A repo containing BDD tests for Dropbox API (on branch WebAPI), and UI tests using Selenium (on branch WebUI)  
 
 # WebUI
 The goal is to test UI on https://opensource-demo.orangehrmlive.com/web/index.php using Python Selenium client and BDD approach via behave.
